@@ -1,0 +1,26 @@
+{
+    "values": [
+        "minecraft:pitcher_crop",
+        "minecraft:pointed_dripstone",
+        "minecraft:rail",
+        "#iris:redstone_torch",
+        "#iris:redstone_wall_torch",
+        "minecraft:redstone_wire",
+        "minecraft:scaffolding",
+        "minecraft:sea_pickle",
+        "minecraft:small_amethyst_bud",
+        "minecraft:sniffer_egg",
+        "minecraft:snow",
+        "minecraft:spore_blossom",
+        "#iris:sugar_cane",
+        "minecraft:sweet_berry_bush",
+        "minecraft:torchflower_crop",
+        "minecraft:tripwire",
+        "minecraft:tripwire_hook",
+        "minecraft:turtle_egg",
+        "minecraft:twisting_vines",
+        "minecraft:vine",
+        "minecraft:weeping_vines",
+        "minecraft:wheat"
+    ]
+}

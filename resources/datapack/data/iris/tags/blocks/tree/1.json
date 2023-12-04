@@ -1,0 +1,26 @@
+{
+    "values": [
+        "minecraft:bamboo",
+        "minecraft:bamboo_sapling",
+        "minecraft:beetroots",
+        "minecraft:bell",
+        "minecraft:big_dripleaf",
+        "minecraft:big_dripleaf_stem",
+        "#iris:black_bed",
+        "#iris:black_candle",
+        "#iris:black_candle_cake",
+        "#iris:black_carpet",
+        "#iris:black_stained_glass_pane",
+        "#iris:black_wall_banner",
+        "#iris:brain_coral",
+        "#iris:brain_coral_fan",
+        "#iris:brain_coral_wall_fan",
+        "minecraft:brewing_stand",
+        "#iris:brown_mushroom",
+        "#iris:cactus",
+        "minecraft:cake",
+        "#iris:calibrated_sculk_sensor",
+        "#iris:campfire",
+        "#iris:carrots"
+    ]
+}

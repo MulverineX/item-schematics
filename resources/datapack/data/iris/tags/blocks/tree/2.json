@@ -1,0 +1,26 @@
+{
+    "values": [
+        "#iris:cauldron",
+        "minecraft:chain",
+        "#iris:chest",
+        "minecraft:chorus_plant",
+        "minecraft:cocoa",
+        "#iris:comparator",
+        "minecraft:composter",
+        "#iris:conduit",
+        "#iris:creeper_head",
+        "#iris:creeper_wall_head",
+        "#iris:crimson_fungus",
+        "#iris:crimson_roots",
+        "minecraft:daylight_detector",
+        "#iris:dirt_path",
+        "minecraft:enchanting_table",
+        "minecraft:end_portal",
+        "minecraft:end_portal_frame",
+        "#iris:end_rod",
+        "minecraft:ender_chest",
+        "minecraft:fire",
+        "minecraft:frogspawn",
+        "#iris:glow_lichen"
+    ]
+}

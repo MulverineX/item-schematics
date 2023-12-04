@@ -1,0 +1,26 @@
+{
+    "values": [
+        "minecraft:grindstone",
+        "minecraft:hanging_roots",
+        "#iris:heavy_weighted_pressure_plate",
+        "minecraft:hopper",
+        "#iris:kelp",
+        "minecraft:ladder",
+        "#iris:lantern",
+        "minecraft:large_amethyst_bud",
+        "minecraft:lectern",
+        "minecraft:lever",
+        "minecraft:lily_pad",
+        "minecraft:mangrove_propagule",
+        "minecraft:medium_amethyst_bud",
+        "#iris:melon_stem",
+        "minecraft:nether_portal",
+        "minecraft:nether_sprouts",
+        "minecraft:nether_wart",
+        "minecraft:piglin_head",
+        "minecraft:piglin_wall_head",
+        "minecraft:pink_petals",
+        "#iris:piston",
+        "minecraft:piston_head"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "values": [
+        "#iris:acacia_button",
+        "#iris:acacia_door",
+        "#iris:acacia_fence",
+        "#iris:acacia_fence_gate",
+        "#iris:acacia_hanging_sign",
+        "#iris:acacia_leaves",
+        "#iris:acacia_pressure_plate",
+        "#iris:acacia_sapling",
+        "#iris:acacia_sign",
+        "#iris:acacia_slab",
+        "#iris:acacia_stairs",
+        "#iris:acacia_trapdoor",
+        "#iris:acacia_wall_hanging_sign",
+        "#iris:acacia_wall_sign",
+        "#iris:activator_rail",
+        "#iris:air",
+        "#iris:allium",
+        "minecraft:amethyst_cluster",
+        "#iris:andesite_wall",
+        "#iris:anvil",
+        "#iris:attached_melon_stem",
+        "#iris:azalea"
+    ]
+}
