@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@sandstone-mc/block':
-    specifier: ^0.1.3
-    version: 0.1.3
+    specifier: ^0.1.4
+    version: 0.1.4
   sandstone:
     specifier: link:../../org/sandstone
     version: link:../../org/sandstone
@@ -54,8 +54,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@sandstone-mc/block@0.1.3:
-    resolution: {integrity: sha512-nVPsgtULLV/rNNrtLWbR5zBXijJbm4KRjbpxxA4Brlfss4JBx7KWh+0Gm5SsgGHqfOwvHFRw3fwUyeThpQe3NA==}
+  /@sandstone-mc/block@0.1.4:
+    resolution: {integrity: sha512-qWK9oEwywEqG7w0qDLizIt5/L1CpOa7HZ4ggC69Rz7XZ9qYmXouN/Mcmfy+X9nv6tIH3qVy+vVODHpA+h2f8Kg==}
     dependencies:
       sandstone: 1.0.0-beta.0
     dev: false

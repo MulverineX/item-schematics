@@ -1,6 +1,6 @@
-import { Data, DataVariable, MCFunction, Macro, Objective, Selector, Trigger, _, execute, functionCmd, sandstonePack, tellraw } from 'sandstone'
+import { Data, DataVariable, MCFunction, Macro, Objective, Selector, Trigger, Variable, _, execute, functionCmd, sandstonePack, tellraw } from 'sandstone'
 import { main } from '../main.ts'
-import { convert_to_schematic, give_schematic } from '../index.ts'
+import { convert_to_schematic, distance_x, distance_y, distance_z, give_schematic } from '../index.ts'
 
 const $ = Macro
 
@@ -21,15 +21,33 @@ main.add('tool', () => {
         MCFunction('use_tool', [UUID], () => {
             _.if(selectionState['!='](2), () => functionCmd('iris:get_target'))
 
-            _.if(selectionState['=='](0), () => $.data.modify.storage('player_db', $`player_db."${UUID}".Corner`)
-                .set.from.storage(selection))
+            _.if(selectionState['=='](0), () => main.playerDB.select($`"${UUID}"`, 'Corner').set(selection))
 
-            _.if(selectionState['=='](0), () => {
+            _.if(selectionState['=='](0), () => _.return.run(() => { 
                 selectionState['+='](1)
                 tellraw('@s', ['Selected the first corner, ', selection ,', of the region.'])
-            })
-            _.if(selectionState['=='](1), () => {
+            }))
+            // Only use one Macro
+            const corner = DataVariable()
+            _.if(selectionState['=='](1), () => corner.set(main.playerDB.select($`"${UUID}"`, 'Corner')))
+
+            _.if(selectionState['=='](1), () => _.return.run(() => {
                 selectionState['+='](1)
+
+                const [x1, y1, z1] = [
+                    Variable(corner.select('[0]')),
+                    Variable(corner.select('[1]')),
+                    Variable(corner.select('[2]'))
+                ]
+                const [x2, y2, z2] = [
+                    Variable(selection.select('[0]')),
+                    Variable(selection.select('[1]')),
+                    Variable(selection.select('[2]'))
+                ]
+                distance_x['='](x2['-'](x1))
+                distance_y['='](y2['-'](y1))
+                distance_z['='](z2['-'](z1))
+
                 tellraw('@s', [
                     'Selected second corner, ', selection, ', of the region. ',
                     { text: '[Click to Save]', bold: true, color: 'green', clickEvent: {
@@ -37,12 +55,13 @@ main.add('tool', () => {
                         value: `trigger ${Trigger('save_schematic', MCFunction('save_selection', [UUID], () => {
                             give_schematic()
 
-                            const corner = Data('storage', 'player_db', $`player_db."${UUID}".Corner`)
+                            // This will not run in sync, so we need to set this again in-case another player uses the tool
+                            const currentCorner = corner.set(main.playerDB.select($`"${UUID}"`, 'Corner'))
 
                             convert_to_schematic(
-                                corner.select('[0]'),
-                                corner.select('[1]'),
-                                corner.select('[2]')
+                                currentCorner.select('[0]'),
+                                currentCorner.select('[1]'),
+                                currentCorner.select('[2]')
                             )
 
                             selectionState['='](0)
@@ -50,8 +69,8 @@ main.add('tool', () => {
                     }},
                     ' (Right click again to clear selection)']
                 )
-            })
-            _.if(selectionState['=='](2), () => $.data.modify.storage('player_db', $`player_db."${UUID}".Corner`).set.value({}))
+            }))
+            _.if(selectionState['=='](2), () => main.playerDB.select($`"${UUID}"`, 'Corner').set({}))
             _.if(selectionState['=='](2), () => {
                 selectionState['='](0)
                 tellraw('@s', 'Cleared selection.')

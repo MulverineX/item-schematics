@@ -1,9 +1,11 @@
-import { Data, MCFunction, comment, raw } from 'sandstone'
+import { Data, MCFunction, Objective, comment, raw } from 'sandstone'
 
 class Main {
-    private loop = MCFunction('main_loop', { runEveryTick: true })
+    private readonly loop = MCFunction('main_loop', { runEveryTick: true })
 
-    public playerDB = Data('storage', 'player_db', 'player_db')
+    public readonly playerDB = Data('storage', 'player_db', 'player_db')
+
+    public readonly rootObjective = Objective.create('root', 'dummy')
 
     add(name: string, callback: () => any) {
         this.loop.push(() => {
